@@ -4,8 +4,8 @@ import ExpenseDate from "./ExpenseDate.jsx";
 
 const ExpenseItem = (props) => {
 
-  console.log(props);
-  console.log(props.data);
+
+
 
   return (
     <div className="expense-item">
