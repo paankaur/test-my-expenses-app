@@ -9,11 +9,11 @@ const Expenses = (props) => {
 
 
   return (
-    <div className="expenses">
+    <Card className="expenses">
       {props.items.map((expense, index) => (
         <ExpenseItem key={index} data={expense} />
       ))}
-    </div>
+    </Card>
   );
 };
 
