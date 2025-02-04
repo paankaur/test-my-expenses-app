@@ -1,5 +1,5 @@
 // App.jsx
-
+import React from "react";
 import Expenses from "./components/Expenses/Expenses.jsx";
 import NewExpense from "./components/NewExpense/NewExpense.jsx";
 
@@ -17,9 +17,14 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandeler = (expense) => {
+    console.log('In App.js')
+    console.log(expense)
+  }
+
   return (
     <div className="App">
-      <NewExpense></NewExpense>
+      <NewExpense onAddExpense={addExpenseHandeler} />
       <Expenses items={expenses} />
     </div>
   );
