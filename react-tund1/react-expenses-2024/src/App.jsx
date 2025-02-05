@@ -15,6 +15,16 @@ const App = () => {
       title: "New Jeans",
       price: 99.99,
     },
+    {
+      date: new Date(2024, 1, 23),
+      title: "New Phone",
+      price: 299.00,
+    },
+    {
+      date: new Date(2023, 1, 23),
+      title: "New Banana",
+      price: 9.79,
+    },
   ];
 
   const addExpenseHandeler = (expense) => {
