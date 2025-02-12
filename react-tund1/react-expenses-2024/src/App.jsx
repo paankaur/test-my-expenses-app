@@ -27,7 +27,7 @@ const DUMMY_EXPENSES = [
     },
     {
       id: 4,
-      date: new Date(2023, 1, 23),
+      date: new Date(2024, 1, 23),
       title: "New Banana",
       price: 9.79,
     },
