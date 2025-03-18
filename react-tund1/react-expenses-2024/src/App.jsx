@@ -1,10 +1,10 @@
 // App.jsx
-// rfc emmet abbreviation. "React Functional Component"
+
 
 import React from "react";
 import Expenses from "./components/Expenses/Expenses.jsx";
 import NewExpense from "./components/NewExpense/NewExpense.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const DUMMY_EXPENSES = [
     {
@@ -34,8 +34,14 @@ const DUMMY_EXPENSES = [
   ];
 
 const App = () => {
-  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
-  
+  const [expenses, setExpenses] = useState(() => {
+    const expensesFromLS = JSON.parse(localStorage.getItem("expenses"));
+    return expensesFromLS || [];
+  });
+
+useEffect(() => {
+  localStorage.setItem("expenses", JSON.stringify(expenses));
+}, [expenses]);
 
   const addExpenseHandeler = (expense) => {
   
