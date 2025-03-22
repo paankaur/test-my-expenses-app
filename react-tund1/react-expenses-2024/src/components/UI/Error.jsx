@@ -1,9 +1,10 @@
 // Error.jsx
 import React, { Fragment } from "react";
-import ReactDOM from "react-dom";
+import {createPortal} from "react-dom";
 import Card from "./Card";
 import Button from "./Button";
 import "./Error.css";
+
 
 const BackDrop = () => {
   return (<div className="backdrop"></div>)
@@ -28,11 +29,11 @@ const ModalOverlay = (props) => {
 const Error = (props) => {
   return (
     <Fragment>
-      {ReactDOM.createPortal(
+      {createPortal(
         <BackDrop onConfirm={props.onConfirm} />,
         document.getElementById("backdrop-root")
       )}
-      {ReactDOM.createPortal(
+      {createPortal(
         <ModalOverlay
           title={props.title}
           message={props.message}
